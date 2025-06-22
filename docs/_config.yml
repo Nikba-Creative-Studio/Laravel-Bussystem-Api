@@ -60,4 +60,6 @@ kramdown:
 
 # Plugins
 plugins:
+  - jekyll-feed
+  - jekyll-sitemap
   - jekyll-seo-tag
