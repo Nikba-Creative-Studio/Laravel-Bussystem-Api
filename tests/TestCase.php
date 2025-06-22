@@ -13,7 +13,7 @@ abstract class TestCase extends Orchestra
     {
         parent::setUp();
 
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->setUpDatabase();
     }
 
     protected function getPackageProviders($app): array
@@ -26,6 +26,11 @@ abstract class TestCase extends Orchestra
     protected function getEnvironmentSetUp($app): void
     {
         config()->set('database.default', 'testing');
+        config()->set('database.connections.testing', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ]);
         
         config()->set('bussystem.api_url', 'https://test-api.bussystem.eu/server');
         config()->set('bussystem.login', 'test_login');
@@ -33,5 +38,10 @@ abstract class TestCase extends Orchestra
         config()->set('bussystem.partner_id', 'test_partner');
         config()->set('bussystem.cache.enabled', false);
         config()->set('bussystem.logging.enabled', false);
+    }
+
+    protected function setUpDatabase(): void
+    {
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     }
 }
