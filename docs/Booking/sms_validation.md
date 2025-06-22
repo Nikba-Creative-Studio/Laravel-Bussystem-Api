@@ -14,7 +14,7 @@ Verify phone numbers via SMS code verification for users who haven't been previo
 **Method:** POST  
 **Type:** Verification function
 
----
+
 
 ## Description
 
@@ -24,7 +24,7 @@ This two-step verification process sends an SMS with a verification code to the 
 1. **Step 1**: Send SMS with verification code (`send_sms = 1`)
 2. **Step 2**: Verify the received code (`check_sms = 1`)
 
----
+
 
 ## Parameters
 
@@ -41,7 +41,6 @@ This two-step verification process sends an SMS with a verification code to the 
 - **check_sms** (integer, optional): Verify SMS code (use `1` for second request)
 - **validation_code** (string, optional): 6-digit code received via SMS (required for verification step)
 
----
 
 ## Example Requests
 
@@ -100,8 +99,6 @@ curl_close($curl);
 echo $response;
 ```
 
----
-
 ## Response Format
 
 ### Step 1: SMS Sent Successfully
@@ -140,7 +137,6 @@ echo $response;
 Your verification code: 569486
 ```
 
----
 
 ## Error Responses
 
@@ -230,66 +226,6 @@ Your verification code: 569486
 }
 ```
 
----
-
-## Complete Workflow Example
-
-```php
-function verify_phone_number($phone, $sid_guest) {
-    // Step 1: Send SMS
-    $sms_response = send_sms_verification($phone, $sid_guest);
-    
-    if (isset($sms_response['error'])) {
-        return ['error' => 'Failed to send SMS: ' . $sms_response['error']];
-    }
-    
-    if ($sms_response['status_code'] === 'send_sms' && $sms_response['status_sms'] === 'OK') {
-        echo "SMS sent successfully to " . $phone . "\n";
-        echo "Please enter the 6-digit code you received: ";
-        
-        // Wait for user input (in real implementation, this would be a form submission)
-        $user_code = trim(fgets(STDIN));
-        
-        // Step 2: Verify code
-        $verify_response = verify_sms_code($phone, $sid_guest, $user_code);
-        
-        if ($verify_response['status_code'] === 'valid') {
-            return ['success' => true, 'message' => 'Phone number verified successfully'];
-        } else {
-            return ['error' => 'Verification failed'];
-        }
-    }
-    
-    return ['error' => 'SMS sending failed'];
-}
-
-function send_sms_verification($phone, $sid_guest) {
-    $post_data = [
-        "sid_guest" => $sid_guest,
-        "v" => "1.1",
-        "phone" => $phone,
-        "send_sms" => 1,
-        "lang" => "en"
-    ];
-    
-    return make_api_call($post_data);
-}
-
-function verify_sms_code($phone, $sid_guest, $code) {
-    $post_data = [
-        "sid_guest" => $sid_guest,
-        "v" => "1.1",
-        "phone" => $phone,
-        "check_sms" => 1,
-        "validation_code" => $code,
-        "lang" => "en"
-    ];
-    
-    return make_api_call($post_data);
-}
-```
-
----
 
 ## Important Notes
 

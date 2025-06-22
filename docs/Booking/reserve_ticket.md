@@ -14,7 +14,7 @@ Create ticket reservations with payment on boarding for carriers and routes that
 **Method:** POST  
 **Type:** Optional function
 
----
+
 
 ## Description
 
@@ -25,7 +25,6 @@ This function creates ticket reservations that allow payment directly on the veh
 - Carrier and route must support payment on boarding
 - Phone number verification may be required via SMS
 
----
 
 ## Parameters
 
@@ -44,7 +43,7 @@ This function creates ticket reservations that allow payment directly on the veh
 - **email** (string, optional): Contact email address for all passengers
 - **info** (string, optional): Additional passenger information or special requests
 
----
+
 
 ## Example Request
 
@@ -64,7 +63,7 @@ $post_data = [
 ];
 ```
 
----
+
 
 ## Response Format
 
@@ -122,7 +121,6 @@ $post_data = [
 - **security**: Ticket security code
 - **reserve_before**: Reservation expiration timestamp
 
----
 
 ## Error Responses
 
@@ -235,8 +233,6 @@ $post_data = [
   ]
 }
 ```
-
----
 
 ## Important Notes
 

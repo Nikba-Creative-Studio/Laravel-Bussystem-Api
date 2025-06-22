@@ -90,7 +90,6 @@ HTTP 403 Forbidden
 2. Ensure API access is enabled
 3. Confirm you're using POST method for all requests
 
----
 
 ## Best Practices Summary
 

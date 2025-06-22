@@ -40,7 +40,6 @@ This comprehensive example demonstrates an airplane booking workflow from Warsaw
 - **Anna Ivanova** (Adult, born 1992-01-01)
 - **Masha Ivanova** (Child, born 2020-02-02)
 
----
 
 ## 1. Flight Search
 
@@ -214,7 +213,6 @@ curl_close($curl);
 }
 ```
 
----
 
 ## 2-5. Simplified Flight Services
 
@@ -232,7 +230,6 @@ curl_close($curl);
 
 **Note:** When searching with `"baggage": "1"`, only flights with included baggage are returned.
 
----
 
 ## 6. Booking
 
@@ -382,7 +379,6 @@ curl_close($curl);
 }
 ```
 
----
 
 ## 7. Payment
 
@@ -449,7 +445,6 @@ curl_close($curl);
 - **Total Price:** The ticket price equals the complete order cost
 - **Error Messages:** Additional flight segments show errors - this is expected behavior
 
----
 
 ## 8. Ticket Generation
 
@@ -461,7 +456,6 @@ Ticket Link: http://test-api.bussystem.eu/viev/frame/print_ticket.php?ticket_id=
 
 **Note:** Both links provide access to the complete flight itinerary for all passengers and all flight segments.
 
----
 
 ## 9. Cancellation
 
@@ -561,7 +555,6 @@ $post_data = [
 }
 ```
 
----
 
 ## Key Flight-Specific Features
 

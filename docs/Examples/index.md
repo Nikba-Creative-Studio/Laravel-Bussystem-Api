@@ -19,12 +19,3 @@ Complex train booking workflow from Munich to Kyiv with multiple connections, in
 
 ### Airplane Example
 Flight booking workflow from Warsaw to Milan with return flights, including passenger documentation requirements and simplified booking process.
-
----
-
-Each example provides real-world scenarios with:
-- Actual request/response data
-- Step-by-step implementation
-- Error handling
-- Best practices
-- Transport-specific considerations 

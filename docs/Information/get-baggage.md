@@ -14,7 +14,6 @@ Get detailed baggage list with dimensions, weight limits, and pricing for specif
 **Method:** POST  
 **Type:** Optional function
 
----
 
 ## Description
 
@@ -27,7 +26,6 @@ Baggage information is also available in other endpoints:
 - **`get_routes`**: The `comfort` tag may contain `1_baggage_free` parameter and the `luggage` tag provides general text information
 - **`get_all_routes`**: The `baggage` tag may contain detailed baggage information similar to `get_baggage`
 
----
 
 ## Parameters
 
@@ -54,7 +52,6 @@ Baggage information is also available in other endpoints:
 | `currency` | enum | Response currency: `EUR`, `RON`, `PLN`, `MDL`, `RUB`, `UAH`, `CZK` |
 | `lang` | enum | Response language: `en`, `ru`, `ua`, `de`, `pl`, `cz` |
 
----
 
 ## Request Example
 
@@ -84,7 +81,6 @@ curl_close($curl);
 echo $response;
 ```
 
----
 
 ## Response Example
 
@@ -157,7 +153,6 @@ echo $response;
 ]
 ```
 
----
 
 ## Response Fields Reference
 
@@ -195,7 +190,6 @@ echo $response;
 | `price` | string | Baggage fee (0 for free baggage) |
 | `currency` | string | Price currency |
 
----
 
 ## Baggage Types
 
@@ -217,7 +211,6 @@ echo $response;
 - **Usage:** Full-size suitcases, large travel bags
 - **Pricing:** Higher fee
 
----
 
 ## Error Responses
 

@@ -14,13 +14,11 @@ Get list of available discounts with pricing for specific routes.
 **Method:** POST  
 **Type:** Optional function
 
----
 
 ## Description
 
 This function provides detailed discount information for routes that support it. You can only use this request if the `get_routes` response contains `request_get_discount = 1`.
 
----
 
 ## Parameters
 
@@ -45,7 +43,6 @@ This function provides detailed discount information for routes that support it.
 | `currency` | enum | Response currency: `EUR`, `RON`, `PLN`, `MDL`, `RUB`, `UAH`, `CZK` |
 | `lang` | enum | Response language: `en`, `ru`, `ua`, `de`, `pl`, `cz` |
 
----
 
 ## Request Example
 
@@ -73,7 +70,6 @@ curl_close($curl);
 echo $response;
 ```
 
----
 
 ## Response Example
 
@@ -117,8 +113,6 @@ echo $response;
 ]
 ```
 
----
-
 ## Response Fields Reference
 
 ### Route Information
@@ -138,7 +132,6 @@ echo $response;
 | `discount_price` | string | Ticket price with this discount applied |
 | `currency` | string | Price currency |
 
----
 
 ## Common Discount Types
 
@@ -156,8 +149,6 @@ echo $response;
 - **Military personnel:** Various percentage discounts
 - **Disabled passengers:** Special accommodation pricing
 - **Loyalty programs:** Member-specific discounts
-
----
 
 ## Error Responses
 
@@ -190,8 +181,6 @@ echo $response;
     "detal": "No discounts"
 }
 ```
-
----
 
 ## Important Notes
 

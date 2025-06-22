@@ -12,7 +12,6 @@ Order creation and reservation management endpoints for securing tickets and man
 
 The booking process allows you to create temporary reservations, validate payment methods, and secure seats across multiple transportation types (bus, train, air) with flexible payment options including payment on boarding.
 
----
 
 ## Booking Workflow
 
@@ -27,7 +26,6 @@ The booking process allows you to create temporary reservations, validate paymen
 3. **sms_validation** → Verify phone number via SMS if required
 4. **reserve_ticket** → Create reservation for payment during boarding
 
----
 
 ## Available Endpoints
 
@@ -67,7 +65,6 @@ Two-step phone number verification via SMS code for users who haven't been previ
 - Session-based verification tracking
 - Time-limited verification codes
 
----
 
 ## Common Use Cases
 
@@ -92,7 +89,6 @@ Handle complex international bookings with full passenger documentation:
 - Age-appropriate document types
 - Visa and travel restriction compliance
 
----
 
 ## Authentication & Sessions
 
@@ -101,7 +97,6 @@ All booking endpoints require proper authentication:
 - **Guest Sessions**: Use `sid_guest` for SMS verification (anonymous users)
 - **Partner Integration**: Include `partner` ID for affiliate tracking
 
----
 
 ## Error Handling
 
@@ -126,7 +121,6 @@ All endpoints return errors in consistent JSON format:
 3. **Handle temporary failures** with appropriate retry logic
 4. **Provide clear user feedback** for validation errors
 
----
 
 ## Best Practices
 

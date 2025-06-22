@@ -14,7 +14,6 @@ Create a new order for a specified period. Orders are automatically canceled aft
 **Method:** POST  
 **Type:** Mandatory function
 
----
 
 ## Description
 
@@ -27,7 +26,6 @@ This function creates a new booking order with temporary seat reservations. The 
 - Automatic seat blocking for specified time periods
 - Payment may be possible after lock_min but doesn't guarantee seat availability
 
----
 
 ## Parameters
 
@@ -85,7 +83,6 @@ Required when `need_doc = 1`:
 - **vagon_id** (array): Train wagon IDs (trains only)
 - **bedclothes** (array): Bedding service request (trains only)
 
----
 
 ## Array Structure
 
@@ -124,7 +121,6 @@ Arrays: seat, discount_id, baggage
 - 82,84: Two baggage items for passenger 1 on route 2
 - 83: One baggage item for passenger 2 on route 2
 
----
 
 ## Example Requests
 
@@ -188,8 +184,6 @@ $post_data = [
   "lang" => "en"
 ];
 ```
-
----
 
 ## Response Format
 
@@ -274,8 +268,6 @@ $post_data = [
 - **price_total**: Total payable amount
 - **currency**: Price currency
 - **item**: Array of booked route segments with passenger details
-
----
 
 ## Error Responses
 

@@ -34,7 +34,6 @@ This comprehensive example demonstrates a complex train booking workflow from Mu
 - **Anna Ivanova** (Adult, born 1992-01-01)
 - **Masha Ivanova** (Child, born 2020-02-02)
 
----
 
 ## 1. Route Search
 
@@ -150,7 +149,6 @@ curl_close($curl);
 }
 ```
 
----
 
 ## 2. Coach and Seat Selection
 
@@ -397,8 +395,6 @@ $post_data = [
 }
 ```
 
----
-
 ## 3. Seat Plans
 
 ### 3.1. Route 1 & 2: No Seat Plans
@@ -444,8 +440,6 @@ $post_data = [
     }
 }
 ```
-
----
 
 ## 4. Discount Lists
 
@@ -527,8 +521,6 @@ $post_data = [
     }
 }
 ```
-
----
 
 ## 5. Booking
 
@@ -635,8 +627,6 @@ $booking_data = [
 }
 ```
 
----
-
 ## 6. Payment
 
 ```php
@@ -685,8 +675,6 @@ $post_data = [
     }
 }
 ```
-
----
 
 ## 7. Cancellation
 
@@ -770,7 +758,6 @@ $post_data = [
 }
 ```
 
----
 
 ## Key Train-Specific Features
 

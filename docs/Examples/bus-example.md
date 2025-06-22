@@ -26,7 +26,6 @@ This comprehensive example demonstrates a complete bus booking workflow from Pra
 - **Anna Smith** (Adult, born 1992-01-01)
 - **Emma Smith** (Child, born 2020-02-02)
 
----
 
 ## 1. Route Search
 
@@ -158,8 +157,6 @@ $post_data = [
 }
 ```
 
----
-
 ## 2. Available Seats
 
 ### 2.1. Outbound Seats
@@ -224,8 +221,6 @@ $post_data = [
 }
 ```
 
----
-
 ## 3. Seat Plans
 
 ### 3.1. Outbound Seat Plan
@@ -255,8 +250,6 @@ $post_data = [
     "v" => "2.0"
 ];
 ```
-
----
 
 ## 4. Discounts
 
@@ -301,8 +294,6 @@ $post_data = [
     ]
 }
 ```
-
----
 
 ## 5. Baggage Options
 
@@ -355,8 +346,6 @@ $post_data = [
     }
 ]
 ```
-
----
 
 ## 6. Booking
 
@@ -416,8 +405,6 @@ $booking_data = [
 }
 ```
 
----
-
 ## 7. Payment
 
 Complete the booking by purchasing tickets:
@@ -455,8 +442,6 @@ $post_data = [
 }
 ```
 
----
-
 ## 8. Ticket Generation
 
 **Complete Order Tickets:**
@@ -469,8 +454,6 @@ https://test-api.bussystem.eu/viev/frame/print_ticket.php?order_id=1026944&secur
 - Emma's outbound: `ticket_id=21012&security=717836`
 - Anna's return: `ticket_id=21013&security=464335`
 - Emma's return: `ticket_id=21014&security=741539`
-
----
 
 ## 9. Cancellation
 
@@ -526,8 +509,6 @@ $post_data = [
     "currency": "EUR"
 }
 ```
-
----
 
 ## Key Points
 

@@ -14,7 +14,7 @@ Validate whether a phone number is eligible for booking tickets with payment on 
 **Method:** POST  
 **Type:** Validation function
 
----
+
 
 ## Description
 
@@ -25,7 +25,6 @@ This function checks if a specific phone number can be used for payment-on-board
 - Determine if SMS verification is needed via `sms_validation`
 - Validate phone number format and carrier restrictions
 
----
 
 ## Parameters
 
@@ -38,7 +37,7 @@ This function checks if a specific phone number can be used for payment-on-board
 - **phone** (string, required): Phone number to validate (include country code, e.g., "+440776251258")
 - **lang** (string, required): Response language [en, ru, ua, de, pl, cz]
 
----
+
 
 ## Example Request
 
@@ -68,7 +67,6 @@ curl_close($curl);
 echo $response;
 ```
 
----
 
 ## Response Format
 
@@ -114,7 +112,6 @@ echo $response;
 }
 ```
 
----
 
 ## Error Responses
 
@@ -135,7 +132,6 @@ echo $response;
 }
 ```
 
----
 
 ## Workflow Integration
 
@@ -164,7 +160,6 @@ if ($validation_response['reserve_validation'] == '1') {
 }
 ```
 
----
 
 ## Important Notes
 

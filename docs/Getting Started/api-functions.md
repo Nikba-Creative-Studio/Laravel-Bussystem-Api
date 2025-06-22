@@ -33,7 +33,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 
 **Note:** All other queries serve auxiliary purposes to support these main workflows.
 
----
 
 ## Flight Search
 
@@ -60,7 +59,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 - **JSON:** `https://test-api.bussystem.eu/files/point_white_list/point_connect_success.json`
 - **CSV:** `https://test-api.bussystem.eu/files/point_white_list/point_connect_success.txt`
 
----
 
 ## Flight Information
 
@@ -74,7 +72,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 **URL:** `https://test-api.bussystem.eu/server/curl/get_discount.php`  
 **Type:** Optional function
 
----
 
 ## Search for Places
 
@@ -88,7 +85,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 **URL:** `https://test-api.bussystem.eu/server/curl/get_plan.php`  
 **Type:** Optional function
 
----
 
 ## Reservation
 
@@ -103,7 +99,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 - For some flights, seats are blocked for the specified time
 - Some flights allow payment after `lock_min`, but success and seat assignment are not guaranteed
 
----
 
 ## Order Information
 
@@ -117,7 +112,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 **URL:** `https://test-api.bussystem.eu/server/curl/get_ticket.php`  
 **Type:** Optional function
 
----
 
 ## Order Payment
 
@@ -126,7 +120,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 **URL:** `https://test-api.bussystem.eu/server/curl/buy_ticket.php`  
 **Type:** Core function
 
----
 
 ## Cancel Order
 
@@ -135,7 +128,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 **URL:** `https://test-api.bussystem.eu/server/curl/cancel_ticket.php`  
 **Type:** Core function
 
----
 
 ## Retrieve Ticket Form
 
@@ -150,7 +142,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 - Bank receipts or terminal confirmations are not acceptable substitutes
 - Failure to present proper e-ticket may result in journey cancellation
 
----
 
 ## Order Lists
 
@@ -180,13 +171,11 @@ get_routes → new_order → buy_ticket → cancel_ticket
 **Purpose:** Ticket list for carriers and dispatchers  
 **URL:** `https://test-api.bussystem.eu/server/curl_dispatcher/get_tickets.php`
 
----
 
 ## Session Management
 
 **Recommendation:** Include `session=xxxx` parameter in all requests where user session tracking is important. This enables access to flights that require session identification.
 
----
 
 ## Server Status
 
@@ -195,7 +184,6 @@ get_routes → new_order → buy_ticket → cancel_ticket
 **URL:** `https://test-api.bussystem.eu/server/curl/ping.php`  
 **Type:** Utility function
 
----
 
 ## Production Environment
 
