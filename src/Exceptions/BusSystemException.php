@@ -27,33 +27,3 @@ abstract class BusSystemException extends Exception
         return $this;
     }
 }
-
-class BusSystemApiException extends BusSystemException
-{
-    //
-}
-
-class BusSystemAuthenticationException extends BusSystemException
-{
-    //
-}
-
-class BusSystemValidationException extends BusSystemException
-{
-    //
-}
-
-class BusSystemBookingException extends BusSystemException
-{
-    //
-}
-
-class BusSystemPaymentException extends BusSystemException
-{
-    //
-}
-
-class BusSystemCancellationException extends BusSystemException
-{
-    //
-}
