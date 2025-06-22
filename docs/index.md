@@ -8,7 +8,7 @@ permalink: /
 
 # BusSystem Laravel API Documentation
 
-Welcome to the official documentation for the BusSystem Laravel API package. This comprehensive SDK enables seamless integration with BusSystem's passenger transportation services.
+Laravel package providing seamless integration with BusSystem transportation services. This comprehensive SDK enables seamless integration with BusSystem's passenger transportation services.
 
 {: .fs-6 .fw-300 }
 
@@ -17,7 +17,7 @@ Welcome to the official documentation for the BusSystem Laravel API package. Thi
 Get up and running with BusSystem API in minutes.
 
 [Get Started Now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View on GitHub](https://github.com/nikba-creative-studio/laravel-bussystem-api){: .btn .fs-5 .mb-4 .mb-md-0 }
+[View on GitHub](https://github.com/Nikba-Creative-Studio/Laravel-Bussystem-Api){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -80,7 +80,7 @@ Management tools for transportation providers.
 Install the package via Composer:
 
 ```bash
-composer require nikba-creative-studio/laravel-bussystem-api
+composer require nikba/laravel-bussystem-api
 ```
 
 ### Configuration
@@ -88,13 +88,13 @@ composer require nikba-creative-studio/laravel-bussystem-api
 Publish the configuration file:
 
 ```bash
-php artisan vendor:publish --provider="NikbaCreativeStudio\BusSystemApi\BusSystemServiceProvider"
+php artisan vendor:publish --provider="Nikba\LaravelBussystemApi\BusSystemServiceProvider"
 ```
 
 ### Basic Usage
 
 ```php
-use NikbaCreativeStudio\BusSystemApi\BusSystemClient;
+use Nikba\LaravelBussystemApi\BusSystemClient;
 
 $client = new BusSystemClient();
 $trips = $client->searchTrips([
@@ -111,12 +111,12 @@ $trips = $client->searchTrips([
 **Documentation Issues**
 {: .label .label-yellow }
 
-Found an error in the documentation? [Open an issue](https://github.com/nikba-creative-studio/laravel-bussystem-api/issues) on GitHub.
+Found an error in the documentation? [Open an issue](https://github.com/Nikba-Creative-Studio/Laravel-Bussystem-Api/issues) on GitHub.
 
 **API Support**
 {: .label .label-red }
 
-For API-related questions, contact BusSystem support or check the [API Status](https://status.bussystem.eu) page.
+For API-related questions, contact BusSystem support or check the [API Status](https://test-api.bussystem.eu/server/curl/ping.php) page.
 
 ---
 
