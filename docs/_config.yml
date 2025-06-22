@@ -1,8 +1,8 @@
 # Site settings
 title: BusSystem Laravel API
 description: Laravel package providing seamless integration with BusSystem transportation services
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://nikba-creative-studio.github.io/Laravel-Bussystem-Api/" # the base hostname & protocol for your site
+baseurl: "/Laravel-Bussystem-Api" # the subpath of your site, e.g. /blog
+url: "https://nikba-creative-studio.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
