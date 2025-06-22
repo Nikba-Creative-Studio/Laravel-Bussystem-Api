@@ -1,8 +1,9 @@
 ---
+layout: default
 title: General Rules
 description: Important guidelines and best practices for BusSystem API integration
-theme: jekyll-theme-cayman
 nav_order: 2
+parent: Getting Started
 ---
 
 # General Rules

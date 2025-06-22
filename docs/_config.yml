@@ -1,0 +1,63 @@
+# Site settings
+title: BusSystem Laravel API
+description: Laravel package providing seamless integration with BusSystem transportation services
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://nikba-creative-studio.github.io/Laravel-Bussystem-Api/" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: just-the-docs
+
+# Just the Docs theme configuration
+remote_theme: just-the-docs/just-the-docs
+
+# Color scheme
+color_scheme: dark
+
+# Search functionality
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Navigation structure
+nav_sort: case_insensitive # Capital letters sorted before lowercase
+
+# Heading anchor links
+heading_anchors: true
+
+# Footer content
+footer_content: "Copyright &copy; 2025 Nikba Creative Studio."
+
+# Footer "Edit this page" link
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/Nikba-Creative-Studio/Laravel-Bussystem-Api"
+gh_edit_branch: "main"
+gh_edit_view_mode: "tree"
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Collection for API endpoints
+collections:
+  endpoints:
+    permalink: "/:collection/:name/"
+    output: true
+
+# Kramdown settings
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
