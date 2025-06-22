@@ -46,6 +46,8 @@ class BusSystemServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../database/migrations' => database_path('migrations'),
             ], 'bussystem-migrations');
+
+            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         }
     }
 

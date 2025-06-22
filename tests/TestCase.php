@@ -13,7 +13,7 @@ abstract class TestCase extends Orchestra
     {
         parent::setUp();
 
-        $this->setUpDatabase();
+        $this->artisan('migrate', ['--database' => 'testing'])->run();
     }
 
     protected function getPackageProviders($app): array
@@ -40,7 +40,7 @@ abstract class TestCase extends Orchestra
         config()->set('bussystem.logging.enabled', false);
     }
 
-    protected function setUpDatabase(): void
+    protected function defineDatabaseMigrations(): void
     {
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     }

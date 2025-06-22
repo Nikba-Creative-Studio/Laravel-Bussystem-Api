@@ -12,7 +12,7 @@ return new class extends Migration
     {
         Schema::create('bussystem_tickets', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained('bussystem_orders')->onDelete('cascade');
+            $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('ticket_id')->unique()->comment('BusSystem ticket ID');
             $table->unsignedBigInteger('transaction_id')->nullable()->comment('BusSystem transaction ID');
             $table->string('security_code')->comment('Ticket security code');
@@ -54,6 +54,9 @@ return new class extends Migration
             $table->index(['departure_date']);
             $table->index(['route_from', 'route_to']);
             $table->index(['created_at']);
+            $table->index(['order_id']);
+            
+            $table->foreign('order_id')->references('id')->on('bussystem_orders')->onDelete('cascade');
         });
     }
 
