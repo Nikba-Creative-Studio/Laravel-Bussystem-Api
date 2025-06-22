@@ -3,7 +3,7 @@ layout: default
 title: get_routes
 description: Search for available routes and schedules across all transport types
 nav_order: 2
-parent: Route Search
+parent: Routes
 ---
 
 # get_routes
@@ -249,219 +249,67 @@ The gathered information must be sent in one combined `new_order` request.
 
 | Field | Description |
 |-------|-------------|
-| `interval_id` | **Critical:** Interval ID for booking (required for `new_order`) |
-| `route_id` | Route identifier |
+| `interval_id` | Unique ID for a route segment |
+| `route_id` | ID of the main route |
 | `route_name` | Full route name |
-| `buy` | `1`=available for purchase, `0`=unavailable |
-| `reserve` | `1`=available for reservation, `0`=unavailable |
-| `eticket` | `1`=e-ticket, `0`=exchange form, `2`=unknown |
-| `only_original` | `1`=requires original PDF ticket for boarding |
-
-### Booking Requirements
-
-| Field | Description |
-|-------|-------------|
-| `need_orderdata` | `1`=passenger data required in `new_order` |
-| `need_birth` | `1`=birth date required |
-| `need_doc` | `1`=document type/number required |
-| `need_doc_expire_date` | `1`=document expiry date required |
-| `need_citizenship` | `1`=citizenship required |
-| `need_gender` | `1`=gender required |
-| `need_middlename` | `1`=middle name required |
-| `fast_booking` | `1`=no passenger data required |
-
-### Timing and Availability
-
-| Field | Description |
-|-------|-------------|
-| `lock_order` | `1`=`new_order` blocks seats for `lock_min` minutes |
-| `lock_min` | Minutes of seat blocking |
-| `reserve_min` | Minutes of long-term reservation |
-| `max_seats` | Maximum passengers per booking |
-| `start_sale_day` | Days available for presale |
-| `stop_sale_hours` | Hours before departure when sales stop |
-| `cancel_free_min` | Minutes for free cancellation |
-
-### Schedule Information
-
-| Field | Description |
-|-------|-------------|
-| `date_from` | Departure date (YYYY-mm-dd) |
-| `time_from` | Departure time (HH:MM:SS) in departure city timezone |
-| `mktime_utc_from` | UNIX timestamp of departure in UTC |
-| `date_to` | Arrival date (YYYY-mm-dd) |
-| `time_to` | Arrival time (HH:MM:SS) in arrival city timezone |
-| `mktime_utc_to` | UNIX timestamp of arrival in UTC |
-| `time_in_way` | Travel duration (HH:MM) |
-
-### Location Details
-
-| Field | Description |
-|-------|-------------|
-| `point_from_id`, `point_from` | Departure city ID and name |
-| `station_from_id`, `station_from` | Departure station ID and name |
-| `station_from_lat`, `station_from_lon` | Departure station coordinates |
-| `point_to_id`, `point_to` | Arrival city ID and name |
-| `station_to_id`, `station_to` | Arrival station ID and name |
-| `station_to_lat`, `station_to_lon` | Arrival station coordinates |
-
-### Pricing Information
-
-| Field | Description |
-|-------|-------------|
-| `price_one_way` | One-way price (informational only) |
-| `price_one_way_max` | Maximum price when seat prices vary |
-| `price_two_way` | Recommended round-trip price |
-| `price_tax` | Service fee |
-| `provision` | Agency fee |
-| `currency` | Price currency |
-
-### Seat and Plan Information
-
-| Field | Description |
-|-------|-------------|
-| `has_plan` | `0`=no plan, `1`=plan available, `2`=check in `get_free_seats` |
-| `free_seats` | Array of available seat numbers |
-| `request_get_free_seats` | `1`=can use `get_free_seats` API |
-| `request_get_discount` | `1`=can use `get_discount` API |
-| `request_get_baggage` | `1`=can use `get_baggage` API |
+| `from_id` | Departure city ID |
+| `to_id` | Arrival city ID |
+| `from_name` | Departure city name |
+| `to_name` | Arrival city name |
+| `from_station_name` | Full departure station name |
+| `to_station_name` | Full arrival station name |
+| `date_from` | Departure date |
+| `time_from` | Departure time |
+| `date_to` | Arrival date |
+| `time_to` | Arrival time |
+| `time_in_way` | Total travel time |
+| `price` | Informational price (use `new_order` for final price) |
+| `currency` | Currency code |
+| `currency_view` | Currency symbol |
+| `free_seats` | Number of available seats |
+| `carrier` | Carrier name |
+| `carrier_id` | Carrier ID |
+| `buy` | `1`=available for purchase |
+| `reserve` | `1`=available for reservation |
+| `request` | `1`=available on request |
+| `trans` | Transport type |
+| `bustype` | Bus type and seat count info |
+| `international` | `1`=international route |
+| `is_transfer` | `1`=route has transfers |
 
 ### Transfer Information
 
 | Field | Description |
 |-------|-------------|
-| `change_stations` | `0`=same station, `1`=different stations |
-| `change_typ` | `manual`=carrier responsibility, `auto`=passenger responsibility |
-| `transfer_time` | Transfer duration (`d`=days, `h`=hours, `m`=minutes) |
+| `change_stations` | Station change required: `0`=no, `1`=yes |
+| `change_typ` | Transfer type (e.g., `manual`) |
+| `transfer_time.d` | Transfer duration (days) |
+| `transfer_time.h` | Transfer duration (hours) |
+| `transfer_time.m` | Transfer duration (minutes) |
 
-### Carrier and Service Information
+### Additional Fields
 
 | Field | Description |
 |-------|-------------|
-| `carrier` | Carrier name |
-| `carrier_id` | Carrier ID |
-| `logo_url` | URL to carrier logo |
 | `comfort` | Available services (wifi, tv, wc, etc.) |
-| `luggage` | Baggage conditions |
+| `rating` | Average rating from reviews |
+| `reviews` | Number of reviews |
 | `route_info` | Additional route information |
+| `lock_order` | `1`=`new_order` blocks seats |
+| `lock_min` | Minutes of seat blocking |
+| `start_sale_day` | Days available for presale |
+| `stop_sale_hours` | Hours before departure when sales stop |
+| `cancel_free_min` | Minutes for free cancellation |
+| `regulations_url` | URL to route regulations |
+| `has_dynamic_price` | `1`=price may change |
+| `is_ws_route` | `1`=third-party route |
+| `ws_carrier` | Third-party carrier name |
+| `ws_name` | Third-party source name |
 
-### Cancellation Information
-
-| Field | Description |
-|-------|-------------|
-| `cancel_only_order` | `0`=individual tickets, `1`=whole order only |
-| `cancel_hours_info` | Array of cancellation fee information by timing |
-
-### Bus-Specific Fields
-
-| Field | Description |
-|-------|-------------|
-| `bustype_id` | Bus type ID |
-| `bustype` | Bus name and seat count |
-| `free_seats_info` | Detailed seat availability information |
-
-### Train-Specific Fields
+### OPEN Ticket Fields
 
 | Field | Description |
 |-------|-------------|
-| `train_id` | Train ID for car selection |
-| `Speed` | Train speed (`0`=unknown) |
-| `Class` | Train class (`0`=unknown) |
-| `type` | Train type |
-| `brand` | Train brand |
-| `firm_name` | Train company |
-| `bedclothes` | Bedding reservation available |
-| `BaggageOver` | Extra baggage tickets available |
-| `BaggageAnimal` | Animal tickets available |
-| `L`, `K`, `M`, `P`, `S`, `O` | Seat counts by class |
-| `price_L`, `price_K`, `price_M`, `price_P`, `price_S`, `price_O` | Minimum prices by class |
-
-### Air-Specific Fields
-
-| Field | Description |
-|-------|-------------|
-| `supplier` | Airline name |
-| `supplier_code` | Airline code |
-| `flight_number` | Flight number |
-| `aircraft_code` | Aircraft code |
-| `aircraft` | Aircraft name |
-| `service_class_type` | Service class type |
-| `service_class` | Service class code |
-| `baggage` | Baggage allowance (e.g., "1PC") |
-
----
-
-## Error Responses
-
-### Dealer Not Active
-```xml
-<root>
-    <error>dealer_no_activ</error>
-    <detal>Dealer not active</detal>
-</root>
-```
-
-### Route Not Active
-```xml
-<root>
-    <error>route_no_activ</error>
-</root>
-```
-
-### Currency Not Active
-```xml
-<root>
-    <error>currency_no_activ</error>
-</root>
-```
-
-### Routes Not Found
-```xml
-<root>
-    <error>interval_no_found</error>
-</root>
-```
-
-### Date Errors
-```xml
-<root>
-    <error>date</error>
-</root>
-```
-
----
-
-## Advanced Usage
-
-### Multi-Route Booking
-For round-trip or multi-city bookings, use the `interval_id` parameter from previous searches to calculate combined pricing with potential discounts.
-
-### Transfer Search Parameters
-
-| Value | Description |
-|-------|-------------|
-| `"auto"` | Search routes with external transfers |
-| `"0"` | Direct routes only |
-| `"1"` | Routes with domestic transfers |
-| `"2-25"` | External transfers with up to 3 connections |
-
-**Note:** Values above 15 may cause significant delays. Always verify each flight segment separately with `route_id` parameter.
-
-### Period Search
-Use negative period values to search both directions from the specified date (e.g., `period: -3` searches 3 days before and 3 days after, total 6 days).
-
-### OPEN Tickets
-- `search_type: 2` - Search for OPEN tickets available for purchase
-- `search_type: 3` - Search for flights to register existing OPEN tickets (requires `find_order_id` or `find_ticket_id` and `find_security`)
-
----
-
-## Best Practices
-
-1. **Always use prices from `new_order`** - Route search prices are informational only
-2. **Respect rate limits** - Maintain ~100:1 ratio of requests to actual bookings
-3. **Handle transfers properly** - Each segment requires separate API calls for details
-4. **Verify availability** - Check `buy`, `reserve`, and seat availability before booking
-5. **Include session parameter** - Recommended for routes requiring session tracking
-6. **Use appropriate timeouts** - Third-party system searches may take longer
-7. **Check response fields** - Use `request_get_*` flags to determine which additional APIs are available
+| `is_open_ticket` | `1`=is an OPEN ticket |
+| `open_ticket_info` | Information about the OPEN ticket |
+``` 

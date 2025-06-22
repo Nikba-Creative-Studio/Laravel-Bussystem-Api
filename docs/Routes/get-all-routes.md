@@ -2,8 +2,8 @@
 layout: default
 title: get_all_routes
 description: Get detailed route schedule and station information
-nav_order: 1
-parent: Route Info
+nav_order: 3
+parent: Routes
 ---
 
 # get_all_routes
@@ -185,8 +185,6 @@ echo $response;
         ]
     }
 ]
-```
-
 ---
 
 ## Response Fields Reference
@@ -248,183 +246,43 @@ echo $response;
 | Field | Type | Description |
 |-------|------|-------------|
 | `schledules` | object | Trip timing information |
-| `schledules.days` | string | Operating days (1-7 for Mon-Sun) |
-| `schledules.regularity` | string | Schedule type (e.g., "bus_days") |
-| `schledules.departure` | string | Departure time (HH:MM:SS) |
-| `schledules.time_in_way` | string | Travel duration (HH:MM) |
+| `schledules.days` | string | Days of the week (e.g., "1,2,3,4,5,6,7") |
+| `schledules.regularity` | string | Regularity of trips |
+| `schledules.departure` | string | Departure time |
+| `schledules.time_in_way` | string | Total travel time |
 
-### Station Details
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `stations` | array | List of all route stations |
-| `stations[].point_id` | string | City ID |
-| `stations[].point_name` | string | City name |
-| `stations[].station_name` | string | Station name and address |
-| `stations[].platform` | string | Platform number |
-| `stations[].adp_id` | string | Station internal ID |
-| `stations[].station_lat` | string | Station latitude |
-| `stations[].station_lon` | string | Station longitude |
-| `stations[].date_arrival` | string | Arrival date (YYYY-MM-DD) |
-| `stations[].arrival` | string | Arrival time (HH:MM:SS) |
-| `stations[].date_departure` | string | Departure date (YYYY-MM-DD) |
-| `stations[].departure` | string | Departure time (HH:MM:SS) |
-| `stations[].day_in_way` | string | Day of journey |
-| `stations[].distance` | string | Distance from origin (km) |
-
-### Available Intervals
+### Stations
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `intervals` | array | Available booking intervals |
-| `intervals[].from_id` | integer | Starting city ID |
-| `intervals[].to_id` | array | Available destination city IDs |
+| `stations` | array | List of stations on the route |
+| `stations.point_id` | string | Station's city ID |
+| `stations.point_name` | string | Station's city name |
+| `stations.station_name` | string | Full station name |
+| `stations.platform` | string | Platform number |
+| `stations.adp_id` | string | Additional station ID |
+| `stations.station_lat` | string | Station latitude |
+| `stations.station_lon` | string | Station longitude |
+| `stations.date_arrival` | string | Arrival date at station |
+| `stations.arrival` | string | Arrival time at station |
+| `stations.date_departure` | string | Departure date from station |
+| `stations.departure` | string | Departure time from station |
+| `stations.day_in_way` | string | Days from departure |
+| `stations.distance` | string | Distance from origin (in km) |
 
-### Pricing Information
+### Route Segments
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `trf` | array | Tariff information |
-| `trf[].price` | number | Price amount |
-| `trf[].title` | string | Price description |
-| `trf[].currency` | string | Price currency |
+| `intervals` | array | Allowed travel segments |
+| `intervals.from_id` | integer | Starting point ID for a segment |
+| `intervals.to_id` | array | Destination point IDs from `from_id` |
 
-### Additional Data
+### Tariffs
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `discounts` | array/null | Available discounts (may be null) |
-| `baggage` | array/null | Baggage options (may be null) |
-| `cancel_hours_info` | array/null | Cancellation policy details |
-| `route_foto` | array/null | Route photos URLs |
-| `regulations_url` | string | URL to route regulations |
-| `driver_contacts_info` | array | Driver contact information |
-
----
-
-## Baggage Information
-
-When baggage information is available, each baggage item includes:
-
-| Field | Description |
-|-------|-------------|
-| `baggage_id` | Baggage ID (required for `new_order`) |
-| `baggage_type_id` | Baggage type identifier |
-| `baggage_type` | Baggage category |
-| `baggage_title` | Human-readable baggage name |
-| `length`, `width`, `height` | Maximum dimensions (cm) |
-| `kg` | Maximum weight (kg) |
-| `max_in_bus` | Maximum pieces allowed on bus |
-| `max_per_person` | Maximum pieces per passenger |
-| `price` | Baggage fee |
-| `currency` | Fee currency |
-
----
-
-## Discount Information
-
-When discount information is available, each discount includes:
-
-| Field | Description |
-|-------|-------------|
-| `discount_id` | Discount identifier |
-| `discount_name` | Discount description |
-
----
-
-## Transfer Information
-
-For routes with transfers, additional fields may include:
-
-| Field | Description |
-|-------|-------------|
-| `point_change` | `1` indicates transfer station |
-| `transfer_time` | Transfer duration |
-| `transfer_time.d` | Days |
-| `transfer_time.h` | Hours |
-| `transfer_time.m` | Minutes |
-
----
-
-## Cancellation Policy
-
-When cancellation information is available:
-
-| Field | Description |
-|-------|-------------|
-| `hours_after_depar` | Valid hours from departure (10001 = infinite) |
-| `hours_before_depar` | Valid hours before departure |
-| `cancel_rate` | Cancellation fee percentage |
-| `money_back` | Refund amount |
-
----
-
-## Error Responses
-
-### Dealer Not Active
-```json
-{
-    "error": "dealer_no_activ",
-    "detal": "Dealer not active"
-}
-```
-
-### Timetable ID Missing
-```json
-{
-    "error": "empty_timetable_id"
-}
-```
-
-### Route ID Not Found
-```json
-{
-    "error": "empty_route_id"
-}
-```
-
-### Route Not Available
-```json
-{
-    "error": "route_no_found"
-}
-```
-
-### No Route Information
-```json
-{
-    "error": "route_data_no_found"
-}
-```
-
----
-
-## Use Cases
-
-### Route Planning
-Get detailed station information with exact times and locations for passenger guidance.
-
-### Service Information
-Display comfort amenities, carrier details, and bus specifications to passengers.
-
-### Pricing Details
-Show detailed tariff information and available discounts.
-
-### Baggage Planning
-Present baggage options with dimensions, weights, and pricing.
-
-### Cancellation Policy
-Inform passengers about cancellation windows and fee structures.
-
----
-
-## Important Notes
-
-1. **Dependency:** This function only works if `timetable_id` from `get_routes` is not empty
-2. **Optional Data:** Many fields may be null depending on route configuration
-3. **Station Details:** GPS coordinates help with mapping and navigation features
-4. **Interval Booking:** Use `intervals` data to determine valid booking combinations
-5. **Transfer Information:** Check for `point_change` indicators for transfer stations
-6. **Pricing Context:** Prices shown are informational - use `new_order` for actual booking prices
-
-This endpoint provides comprehensive route details essential for presenting complete travel information to passengers before booking.
+| `trf` | array | List of available fares |
+| `trf.price` | float | Price of the fare |
+| `trf.title` | string | Fare title/description |
+| `trf.currency` | string | Currency code |

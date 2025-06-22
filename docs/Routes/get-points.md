@@ -3,7 +3,7 @@ layout: default
 title: get_points
 description: Search and filter available cities, countries, stations, and airports
 nav_order: 1
-parent: Route Search
+parent: Routes
 ---
 
 # get_points

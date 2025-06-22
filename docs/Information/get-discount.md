@@ -2,8 +2,8 @@
 layout: default
 title: get_discount
 description: Get available discounts and pricing for specific routes
-nav_order: 3
-parent: Route Info
+nav_order: 2
+parent: Information
 ---
 
 # get_discount

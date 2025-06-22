@@ -2,8 +2,8 @@
 layout: default
 title: get_baggage
 description: Get detailed baggage options and pricing for specific routes
-nav_order: 2
-parent: Route Info
+nav_order: 1
+parent: Information
 ---
 
 # get_baggage

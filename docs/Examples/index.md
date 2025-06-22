@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Examples
-nav_order: 4
+nav_order: 5
 has_children: true
-permalink: /examples/
 ---
 
 # Examples
@@ -28,4 +27,4 @@ Each example provides real-world scenarios with:
 - Step-by-step implementation
 - Error handling
 - Best practices
-- Transport-specific considerations
+- Transport-specific considerations 
