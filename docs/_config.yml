@@ -7,13 +7,13 @@ url: "https://nikba-creative-studio.github.io/Laravel-Bussystem-Api/" # the base
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: just-the-docs
 
 # Just the Docs theme configuration
 remote_theme: just-the-docs/just-the-docs
 
 # Color scheme
 color_scheme: dark
+
 
 # Search functionality
 search_enabled: true
