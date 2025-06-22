@@ -411,7 +411,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Nicolai Bargan](https://github.com/nicolaibargan)
+- [Nicolai Bargan](https://www.linkedin.com/in/nicolai-bargan/)
 - [Nikba Creative Studio](https://github.com/nikba-creative-studio)
 - [All Contributors](../../contributors)
 
