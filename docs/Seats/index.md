@@ -14,8 +14,12 @@ Seat availability and layout information for buses and trains, enabling detailed
 ### get_free_seats
 Search for available seat numbers for buses and trains, including wagon selection for train travel. Essential for routes requiring specific seat assignment.
 
+[Read more about `get_free_seats`](get-free-seats.md)
+
 ### get_plan
 Get detailed seat layout and floor plans for vehicles, providing visual seat maps for user-friendly seat selection interfaces.
+
+[Read more about `get_plan`](get-plan.md)
 
 ---
 

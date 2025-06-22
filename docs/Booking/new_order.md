@@ -335,7 +335,6 @@ $post_data = [
   "error": "no_doc"
 }
 ```
-
 ```json
 {
   "error": "no_birth_date"

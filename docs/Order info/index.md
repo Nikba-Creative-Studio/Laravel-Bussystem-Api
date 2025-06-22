@@ -29,5 +29,24 @@ These endpoints provide detailed information about existing orders and tickets, 
 ### get_order
 Retrieve comprehensive information about an entire order including all routes, passengers, payment methods, and order history. This endpoint provides a complete overview of the booking status and is essential for order management and customer service.
 
+[Read more about `get_order`](get_order.md)
+
 ### get_ticket
 Retrieve detailed information about specific tickets or all tickets within an order. This endpoint provides comprehensive ticket data needed for passenger management, boarding verification, and customer service.
+
+[Read more about `get_ticket`](get_ticket.md)
+
+### buy_ticket
+Finalize a booking and issue tickets after successful payment or for free tickets. This is a crucial step that converts a temporary order into a confirmed booking.
+
+[Read more about `buy_ticket`](buy_ticket.md)
+
+### cancel_ticket
+Cancel issued tickets and process refunds according to carrier policies. This endpoint handles the entire cancellation process, including calculating penalties and returning funds.
+
+[Read more about `cancel_ticket`](cancel_ticket.md)
+
+### print_ticket
+Generate and retrieve ticket documents in various formats (e.g., PDF, HTML). This endpoint provides the final, printable ticket for passengers to use for boarding.
+
+[Read more about `print_ticket`](print_ticket.md)

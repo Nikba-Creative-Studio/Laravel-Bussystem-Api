@@ -20,8 +20,14 @@ These endpoints work together to provide complete location and route discovery:
 ### get_points
 Search and filter available cities, countries, stations, and airports with dynamic filtering capabilities. Essential for building location search and autocomplete functionality.
 
+[Read more about `get_points`](get-points.md)
+
 ### get_routes
 Search for all available routes between locations with comprehensive filtering options for dates, transport types, passenger counts, and service classes.
 
+[Read more about `get_routes`](get-routes.md)
+
 ### get_all_routes
 Get detailed route schedule information including stations, timetables, baggage options, and cancellation policies. Provides comprehensive route details when `timetable_id` is available. 
+
+[Read more about `get_all_routes`](get-all-routes.md) 

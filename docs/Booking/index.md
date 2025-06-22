@@ -38,6 +38,8 @@ Create a new booking order with temporary seat reservations for up to 10 routes 
 - Flexible passenger data requirements based on route needs
 - Comprehensive baggage and discount options
 
+[Read more about `new_order`](new_order.md)
+
 ### reserve_ticket
 Create ticket reservations with payment on boarding for carriers and routes that support this payment method. This allows passengers to pay directly to the driver/conductor during boarding instead of online payment.
 
@@ -46,6 +48,8 @@ Create ticket reservations with payment on boarding for carriers and routes that
 - Requires phone number verification
 - Not available for all routes/carriers
 - Generates ticket with security code for boarding
+
+[Read more about `reserve_ticket`](reserve_ticket.md)
 
 ### reserve_validation
 Validate whether a phone number is eligible for booking tickets with payment on boarding. This endpoint checks carrier restrictions and determines if SMS verification is required before proceeding.
@@ -56,6 +60,8 @@ Validate whether a phone number is eligible for booking tickets with payment on 
 - Determines SMS verification requirements
 - Prevents failed reservation attempts
 
+[Read more about `reserve_validation`](reserve_validation.md)
+
 ### sms_validation
 Two-step phone number verification via SMS code for users who haven't been previously authenticated. Required for payment-on-boarding reservations when phone number verification is needed.
 
@@ -64,6 +70,8 @@ Two-step phone number verification via SMS code for users who haven't been previ
 - Rate-limited to prevent abuse
 - Session-based verification tracking
 - Time-limited verification codes
+
+[Read more about `sms_validation`](sms_validation.md)
 
 
 ## Common Use Cases
