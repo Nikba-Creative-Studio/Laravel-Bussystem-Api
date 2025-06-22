@@ -2,7 +2,7 @@
 layout: default
 title: reserve_validation
 description: Validate phone number eligibility for payment on boarding reservations
-nav_order: 3
+nav_order: 2
 parent: Booking
 ---
 

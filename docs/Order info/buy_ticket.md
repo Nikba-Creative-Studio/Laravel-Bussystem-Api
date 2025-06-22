@@ -2,8 +2,8 @@
 layout: default
 title: buy_ticket
 description: Complete ticket purchase based on a generated order from new_order
-nav_order: 1
-parent: Buy Ticket
+nav_order: 3
+parent: Order Info
 ---
 
 # buy_ticket

@@ -4,7 +4,6 @@ title: API Functions
 description: Complete overview of BusSystem API operations and endpoints
 nav_order: 3
 parent: Getting Started
-permalink: /api-functions/
 ---
 
 # API Functions

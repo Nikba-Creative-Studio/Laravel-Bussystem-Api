@@ -2,7 +2,7 @@
 layout: default
 title: sms_validation
 description: Phone number verification via SMS code for payment on boarding reservations
-nav_order: 4
+nav_order: 3
 parent: Booking
 ---
 

@@ -2,8 +2,8 @@
 layout: default
 title: print_ticket
 description: Generate and download PDF e-ticket forms for confirmed bookings
-nav_order: 1
-parent: Print Ticket
+nav_order: 5
+parent: Order Info
 ---
 
 # print_ticket

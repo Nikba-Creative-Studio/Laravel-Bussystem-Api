@@ -2,8 +2,8 @@
 layout: default
 title: cancel_ticket
 description: Cancel unpaid orders, reservations, or process full/partial refunds for paid tickets
-nav_order: 1
-parent: Cancel Ticket
+nav_order: 4
+parent: Order Info
 ---
 
 # cancel_ticket
