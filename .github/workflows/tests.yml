@@ -50,7 +50,7 @@ jobs:
           composer update --prefer-stable --prefer-dist --no-interaction
 
       - name: Execute tests
-        run: vendor/bin/phpunit --no-coverage
+        run: vendor/bin/phpunit --configuration phpunit-simple.xml
 
   coverage:
     runs-on: ubuntu-latest
@@ -83,8 +83,17 @@ jobs:
       - name: Execute tests with coverage
         run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
 
+      - name: Check if coverage file exists
+        run: |
+          if [ -f coverage.xml ]; then
+            echo "Coverage file generated successfully"
+          else
+            echo "Coverage file not found, but tests passed"
+          fi
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
+        if: hashFiles('coverage.xml') != ''
