@@ -1,0 +1,59 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Nikba\LaravelBussystemApi\Exceptions;
+
+use Exception;
+
+abstract class BusSystemException extends Exception
+{
+    protected array $context = [];
+
+    public function __construct(string $message = '', int $code = 0, ?\Throwable $previous = null, array $context = [])
+    {
+        parent::__construct($message, $code, $previous);
+        $this->context = $context;
+    }
+
+    public function getContext(): array
+    {
+        return $this->context;
+    }
+
+    public function setContext(array $context): self
+    {
+        $this->context = $context;
+        return $this;
+    }
+}
+
+class BusSystemApiException extends BusSystemException
+{
+    //
+}
+
+class BusSystemAuthenticationException extends BusSystemException
+{
+    //
+}
+
+class BusSystemValidationException extends BusSystemException
+{
+    //
+}
+
+class BusSystemBookingException extends BusSystemException
+{
+    //
+}
+
+class BusSystemPaymentException extends BusSystemException
+{
+    //
+}
+
+class BusSystemCancellationException extends BusSystemException
+{
+    //
+}

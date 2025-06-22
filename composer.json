@@ -1,0 +1,70 @@
+{
+    "name": "nikba/laravel-bussystem-api",
+    "description": "Laravel package providing seamless integration with BusSystem transportation services",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "bussystem",
+        "transportation",
+        "booking",
+        "travel",
+        "api"
+    ],
+    "authors": [
+        {
+            "name": "Nicolai Bargan",
+            "email": "office@nikba.md",
+            "homepage": "https://nikba.md",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/Nikba-Creative-Studio/Laravel-Bussystem-Api",
+    "support": {
+        "issues": "https://github.com/Nikba-Creative-Studio/Laravel-Bussystem-Api/issues",
+        "source": "https://github.com/Nikba-Creative-Studio/Laravel-Bussystem-Api"
+    },
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/http": "^10.0|^11.0",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^8.0|^9.0",
+        "mockery/mockery": "^1.5",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nikba\\LaravelBussystemApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nikba\\LaravelBussystemApi\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nikba\\LaravelBussystemApi\\BusSystemServiceProvider"
+            ],
+            "aliases": {
+                "BusSystem": "Nikba\\LaravelBussystemApi\\Facades\\BusSystem"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/php-cs-fixer fix"
+    }
+}
